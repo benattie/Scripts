@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/benatti/.vim/ftplugin'
+let g:netrw_dirhist_2='/home/benatti/.vim/spell'
+let g:netrw_dirhist_3='/home/benatti/.vim/ftplugin/tex'
+let g:netrw_dirhist_4='/home/benatti/Público/Temp/ibtesis/Resumen'

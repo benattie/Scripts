@@ -1,0 +1,129 @@
+%% start of file `jdoe_classic.tex'.
+%% Copyright 2006 Xavier Danaux.
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[10pt]{moderncv}
+
+% moderncv styles
+\moderncvstyle{casual}       % optional argument are 'nocolor' (black & white cv) and 'roman' (for roman fonts, instead of sans serif fonts)
+%\moderncvstyle{classic}       % idem
+
+% character encoding
+\usepackage[utf8]{inputenc}   % replace by the encoding you are using
+
+% personal data (the given example is exhaustive; just give what you want)
+\firstname{Emanuel Alejandro}
+\familyname{Benatti}
+\title{}
+%\address{Av. Bustillo 9500}
+\phone{(0294)-154-784179}
+
+\email{emanuel.benatti@gmail.com}
+%\extrainfo{\weblink{www.ctan.org}}
+\photo[64pt]{cv.png} % also optional, and the optional argument is the height the picture must be resized to
+%\quote{Any intelligent fool can make things bigger, more complex, and more violent. It takes a touch of genius -- and a lot of courage -- to move in the opposite direction.}% also optional
+
+%\renewcommand{\listsymbol}{{\fontencoding{U}\fontfamily{ding}\selectfont\tiny\symbol{'102}}} % define another symbol to be used in front of the list items
+
+% the ConTeXt symbol
+\def\ConTeXt{%
+  C%
+  \kern-.0333emo%
+  \kern-.0333emn%
+  \kern-.0667em\TeX%
+  \kern-.0333emt}
+
+% slanted small caps (only with roman family; the sans serif font doesn't exists :-()
+%\usepackage{slantsc}
+%\DeclareFontFamily{T1}{myfont}{}
+%\DeclareFontShape{T1}{myfont}{m}{scsl}{ <-> cork-lmssqbo8}{}
+%\usefont{T1}{myfont}{m}{scsl}Testing the font
+
+% command and color used in this document, independently from moderncv 
+\definecolor{see}{rgb}{0.5,0.5,0.5}% for web links
+\newcommand{\up}[1]{\ensuremath{^\textrm{\scriptsize#1}}}% for text subscripts
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+\maketitle
+%\makequote
+
+
+\section{Datos personales}
+\cvitem{Fecha de}{}
+\cvitem{nacimiento:}{30 de Diciembre de 1988.}
+\cvitem{Lugar de}{}
+\cvitem{nacimiento:}{Rosario, Santa Fe, Argentina.}
+\cvitem{DNI:}{34.288.650}
+\cvitem{CUIL:}{20-34288650-8}
+\cvitem{Dirección:}{Juan Martín de Pueyrredón 3463, Rosario, Santa Fe}
+\cvitem{Código postal:}{2000}
+\cvitem{Teléfono:}{(0294)-154-784179}
+\cvitem{Correo}{}
+\cvitem{electrónico:}{emanuel.benatti@gmail.com}
+\section{Formación}
+\cventry{2012}{Maestría en Ciencias Físicas}{Especialización en física tec\-no\-ló\-gi\-ca.}{Universidad de Cuyo - Instituto Balseiro}{}{}
+\cventry{2009-2011}{Licenciado en física}{Universidad de Cuyo - Instituto Balseiro}{}{}{}
+\cvitem{Promedio}{}
+\cvitem{general:}{8,17 (Referencia: promedio histórico 7,39)}
+
+\section{Tesis de grado}
+\cvitem{Título:}{\textbf{Diseño y construcción de un detector de neutrones utilizando el superconductor MgB$_2$}}{}
+\cvitem{Director:}{Dr. Mariano Gómez Berisso}
+\cvitem{Co-Director:}{Dr. Julio Guimpel}
+
+\section{Tesis de maestría}
+\cvitem{Título:}{\textbf{Films de MgB$_2$: posibilidad de uso como detector de neutrones}}{}
+\cvitem{Director:}{Dr. Mariano Gómez Berisso}
+\cvitem{Co-Director:}{Dr. Julio Guimpel}
+
+\section{Congresos}	
+\cvitem{}{Asistencia a la Segunda Reunión Conjunta SUF-AFA. XII Reunión de la SUF - 96\textordfeminine\,Reunión Nacional de la Asociación Física Argentina, Montevideo Uruguay, 20 y 23 de Septiembre de 2011.}
+\cvitem{}{Presentación de Póster en la Segunda Reunión Conjunta SUF-AFA. XII Reunión de la SUF - 96\textordfeminine\,Reunión Nacional de la Asociación Física Argentina:}
+\cvlistitem{Estudio de la estructura de vórtices en los superconductores de alta temperatura crítica FeSe$_{1-x}$Te$_{x}$ y Bi$_{2}$Sr$_{2}$CaCu$_{2}$O$_{8}$ \textbf{Benatti\,E.}, Fasano Y., Nieva G., Gaspar Franco D.}
+
+\cvitem{}{Asistencia a la 97\textordfeminine\,Reunión Nacional de la Asociación Física Argentina, Carlos Paz, Córdoba, 25 y 28 de Septiembre de 2012.}
+\cvitem{}{Presentación de Póster en la 97\textordfeminine\,Reunión Nacional de la Asociación Física Argentina:}
+\cvlistitem{Diseño y construcción de un detector de neutrones utilizando el superconductor MgB$_2$ \textbf{Benatti E.}, Gómez Berisso M., Guimpel\,J.}
+
+\section{Materias de Postgrado}
+\cvlistitem{Fenomenología de la materia condensada}
+\cvlistitem{Interacción de neutrones con la materia condensada}
+\cvlistitem{Tópicos de física computacional}
+\cvlistitem{Magnetismo}
+\cvlistitem{Superconductividad}
+\cvlistitem{Caracterización de materiales}
+\cvlistitem{Economía y gestión de proyectos}
+\cvlistitem{Introducción a los microsistemas (MEMS) y la microfabricación}
+
+%\newpage
+\section{Becas}
+\cvitem{2012}{Beca para realizar la Maestría en Ciencias Físicas del Instituto Balseiro, otorgada por la fundación YPF.}
+\cvitem{2009-2011}{Beca para realizar la carrera de Licenciatura en Física en el Instituto Balseiro, otorgada por la fundación YPF.}
+
+\section{Idiomas}
+\cvlanguage{Español}{Nativo}{}
+\cvlanguage{Ingles}{Nivel Intermedio}{}
+\closesection{}
+%\pagebreak{}
+
+\section{Conocimientos de computación y programación}
+\cvitem{OS}{Linux, Windows}{}{}
+\cvitem{Lenguajes}{C/C++, Labview, LaTex, Visual Basic}{}{}
+\cvitem{Programas}{gnuplot, vim, coreutils, Open Office, Layout Editor, Comsol Multiphysics, AutoCAD, Origin}{}{}
+
+\section{Otros antecedentes}
+\cvlistitem{Expositor del Stand del Laboratorio de Bajas Temperaturas en la Muestra CAB-IB en el año 2012.}
+\cvlistitem{Colaboración en la Semana de Ciencia y Tecnología realizada en el año 2012.}
+\cvlistitem{Tesorero del Centro de Estudiantes del Instituto Balseiro en los años 2010-2011.}
+\cvlistitem{Presidente del Centro de Estudiantes del Instituto Balseiro en los años 2011-2012.}
+\end{document}
+
+
+%% end of file `jdoe_classic.tex'.

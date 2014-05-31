@@ -1,0 +1,168 @@
+\documentclass[final]{beamer}
+%\usepackage[mathletters,combine]{ucs}
+\usepackage[utf8x]{inputenc}
+%\inputencoding{latin1}
+\usepackage[pdftex]{graphicx}			% allows us to import images
+\usepackage{sidecap}
+\usepackage[orientation=portrait, scale=1.4, debug]{beamerposter}
+\usepackage[spanish,activeacute,es-tabla]{babel}
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\setlength{\paperwidth}{80cm}%48in=121.44cm
+\setlength{\paperheight}{120cm}%36in=91.08cm
+\setlength{\sepwid}{0.5cm}
+\setlength{\onecolwid}{39cm}
+\setlength{\twocolwid}{78cm}
+%\setlength{\topmargin}{-0.5in}
+\usetheme{confposter}
+\usepackage{exscale}
+
+\usecaptiontemplate{
+\small
+\structure{\insertcaptionname~\insertcaptionnumber:}
+\insertcaption}
+
+%-----------------------------------------------------------
+% Define colours (see beamerthemeconfposter.sty to change these colour definitions)
+%-----------------------------------------------------------
+
+\setbeamercolor{block title}{fg=blue,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{block alerted title}{fg=white,bg=dblue!70}
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10}
+
+%-----------------------------------------------------------
+% Name and authors of poster/paper/research
+%-----------------------------------------------------------
+\title{Diseño y construcción de un detector de neutrones utilizando el superconductor MgB$_2$}
+\author{E. Benatti,$^{1,2}$ M. Gómez Berisso,$^{2}$ J. Guimpel$^{2}$}
+\institute{$^{1}$Instituto Balseiro, Comisión Nacional de Energía Atómica, Universidad Nacional de Cuyo.\\ $^{2}$ Laboratorio de Bajas Temperaturas, Centro Atómico Bariloche, Comisión Nacional de Energía Atómica.}	
+
+%-----------------------------------------------------------
+% Start the poster itself
+%-----------------------------------------------------------
+
+\begin{document}
+\begin{frame}[t]
+\vspace{-2.5cm}
+\hspace{-3cm}
+\begin{abstract}
+\hspace*{1.3cm}En este trabajo se presentan avances en la construcción de un detector de neutrones utilizando el superconductor MgB$_2$. El mismo aprovecha el calor generado por la reacción $^{10}$B(n,$\alpha$)$^{7}$Li que tiene una sección eficaz de aproximadamente 3800 barns para neutrones térmicos. El calor producido por la reacción provoca una ruptura parcial de la superconductividad en el material. El abrupto cambio en la resistividad produce una señal que registra la captura del neutrón.\\
+\hspace*{1.3cm}Se presentan cuestiones relacionadas con el diseño del detector (tiempo de respuesta, señal producida por el detector, dimensiones) y avances sobre la construcción del mismo. El diseño se hizo a través del sofware comercial de simulaciones por elementos finitos COMSOL MULTIPHYSICS. A su vez se crecieron films de MgB$_2$. Los mismos se obtuvieron mediante deposición directa por sputtering y un proceso de recocido a films de B que se fabricaron por evaporación y sputtering.
+\end{abstract}
+\vspace{-1.5cm}
+\begin{columns}[t]					% the [t] option aligns the column's content at the top
+%\begin{column}{\sepwid}\end{column}			% empty spacer column
+\hspace{-4cm}
+\begin{column}{\onecolwid}
+\begin{block}{\normalsize{Introducción}}
+\begin{column}{18cm}
+\vspace*{-2cm}
+\begin{figure}
+\includegraphics[width=20cm]{circuito}
+%\caption{Esquema básico del circuito necesario para operar un TES.}
+\end{figure}
+\end{column}
+\begin{column}{19cm}
+Los TES (transition edge sensors), son un tipo de sensores que operan en el rango de la transición superconductora del material que es utilizado como volumen de detección. Son sensores criogénicos que tienen cortos tiempos de respuesta, gran sensibilidad y poco ruido.
+\end{column}
+\end{block}
+\vspace{1cm}
+\begin{alertblock}{\normalsize{Simulaciones}}
+%\hspace{-1cm}
+\vspace*{1cm}
+\begin{column}{37cm}
+\vspace{-1.4cm}
+\begin{figure}
+\includegraphics[width=36cm]{secuencia.png}
+\caption{Evolución del mapa de temperaturas dentro del MgB$_2$ al ser calentado por la reacción $^{10}$B\,(n,$\alpha$)\,$^{7}$Li. Se muestran el instante inicial y el instante en el que el tamaño de la región normal es máximo. A partir de esta simulación se estimaron las dimensiones mínimas que debe tener el detector para registrar eficientemente la captura de un neutrón.}
+\end{figure}
+\end{column}
+
+\begin{column}{37cm}
+\begin{figure}
+\centering
+\includegraphics[width=23cm]{modelo}
+\caption{Se simuló un cable de MgB$_2$ acoplando el problema térmico con el eléctrico. Los espesores se variaron entre los 200\,nm y 1000\,nm y el ancho del cable era de 1\,$\mu$m.}
+\end{figure}
+\end{column}
+
+\begin{column}{18cm}
+\begin{figure}
+\includegraphics[width=18cm]{Tvst}
+\caption{Evolución de la temperatura con el tiempo, variando la corriente que circula por el cable.}
+\end{figure}
+\end{column}
+\begin{column}{18.8cm}
+\begin{figure}
+\includegraphics[width=16.5cm]{Vvst}
+\caption{Puede apreciarse que tanto la intensidad de la señal como el tiempo de respuesta mejoran al reducirse el espesor del cable de MgB$_2$.}
+\end{figure}
+\end{column}
+\end{alertblock}
+\end{column}
+%\begin{column}{\sepwid}\end{column}			% empty spacer column
+\hspace*{-4cm}
+\begin{column}{\onecolwid}
+\begin{block}{\normalsize{Crecimiento de films por evaporación}}
+\begin{column}{20cm}
+\vspace{-1.8cm}
+\begin{figure}
+ \hspace{5cm} 
+ \includegraphics[width=19cm]{navetas}
+\end{figure}
+\end{column}
+\begin{column}{20cm}
+\begin{figure}
+ \hspace{-2cm} 
+ \includegraphics[width=19cm]{cuarzo}
+\end{figure}
+\end{column}
+\begin{column}{19.5cm}
+\vspace{2cm}
+\begin{figure}
+ \hspace{-1cm}
+ \includegraphics[width=20cm]{mgb2si}
+\end{figure}
+\end{column}
+\begin{column}{19.5cm}
+\vspace{2cm}
+\begin{figure}
+\hspace{-0.7cm}
+ \includegraphics[width=19.5cm]{mgb2z}
+\end{figure}
+\end{column}
+\end{block}
+\vspace{1.9cm}
+\begin{block}{\normalsize{Crecimiento de films por sputtering}}
+%\vspace{1cm}
+\begin{column}{15cm}
+\begin{figure}
+ \hspace{-2cm}
+ \includegraphics[width=13.5cm]{maquina}
+\end{figure}
+\end{column}
+\begin{column}{11cm}
+\begin{figure}
+\hspace{-4cm}
+ \includegraphics[width=10.3cm]{plasma}
+\end{figure}
+\end{column}
+\begin{column}{12cm}
+\begin{figure}
+\vspace*{0.1cm}
+\hspace{-2.5cm}
+ \includegraphics[width=14cm]{muestras}
+\end{figure}
+\end{column}
+\end{block}
+\vspace{1.4cm}
+\begin{alertblock}{\normalsize{Conclusiones}}
+Se avanzó en la construcción de un detector de neutrones tipo TES utilizando el superconductor MgB$_2$. Se logró implementar una cadena de simulaciones que permitie optimizar el diseño del detector. A partir de simulaciones en el programa de elementos finitos COMSOL MULTIPHYSICS se pudieron determinar las dimensiones óptimas del detector, simular la señal obtenida debido a la captura de un neutrón y determinar el tiempo de res\-pues\-ta del dispositivo. Por otro lado, se están creciendo films de MgB$_2$ por medio de una técnica de fabricación de láminas delgadas de boro (por evaporación y por sputtering) y recocido de las mismas. Hasta ahora los films obtenidos por esta técnica no han resultado tener las características esperadas para la fabricación de un dispositivo. También se está intentando crecer los films de MgB$_2$ directamente por sputtering (sin realizar un recocido). Ésta parece ser una mejor técnica para ob\-te\-ner films adecuados para la elaboración del detector, sin embargo, todavía queda determinar los parámetros óptimos de deposición que permitan obtener films con las características deseadas.
+\end{alertblock}
+\end{column}
+%\begin{column}{\sepwid}\end{column}			% empty spacer column
+\end{columns}
+\end{frame}
+\end{document}

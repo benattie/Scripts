@@ -1,0 +1,160 @@
+%\documentclass[a4paper,11pt,draft]{article}
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[spanish,activeacute,es-tabla]{babel}
+\usepackage{graphicx, color}% Include figure files
+\usepackage{float}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\usepackage{times}
+\usepackage{latexsym,amsfonts,amssymb,bbm} % S\'{\i}mbolos matem\'{a}ticos
+%\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}}
+\usepackage{dcolumn}% Align table columns on decimal point
+\usepackage{bm}% bold math
+\bibliographystyle{plain}
+%%%
+%\begin{comment}
+%\usepackage[
+%    colorlinks=true,
+%    linkcolor=blue,
+%    anchorcolor=blue,
+%    citecolor=blue,
+%    pdfview=FitH,
+%    pdftitle={MEMS},
+%    pdfauthor={Emanuel A. Benatti},
+%    pdfsubject={},
+%    pdfkeywords={},
+%   ]{hyperref}
+%   \end{comment}
+%%%
+\usepackage{t1enc}
+
+\sloppy                 
+\tolerance=1000         
+%vertical
+\voffset=-2.5cm         %margen superior 0cm = -4.5cm
+%\topmargin=0cm          
+%\headheight=1.0cm       
+%\headsep=0.5cm          
+\textheight=25cm     %alto del texto 
+\footskip=1.0cm         
+%horizontal
+\hoffset=1.0cm          
+\evensidemargin=-0.6cm  %márgen para las páginas pares
+\oddsidemargin=-0.8cm      %márgen para las páginas impares
+\marginparsep=0cm       
+\textwidth=16.5cm       %ancho del texto
+\linespread{1.2}      %interlineado 
+
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.70}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.66}
+%\renewcommand{\baselinestretch}{1}
+
+%%% FANCY HEADERS
+%\usepackage{fancyhdr}
+%\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+%\fancyhf{}                            %
+%\fancyhead[LE,RO]{\bfseries\thepage}  %
+%\fancyhead[LO]{\bfseries\rightmark}   %
+%\fancyhead[RE]{\bfseries\leftmark}    %
+
+%\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\footrulewidth}{0pt}
+%\addtolength{\headheight}{0.5pt}
+
+%\fancypagestyle{plain}{            %
+%\fancyhead{}                       % get rid of headers
+%\renewcommand{\headrulewidth}{0pt} % and the line
+%}
+
+
+\begin{document}
+\renewcommand{\tablename}{Tabla}
+\title{Lab on chips y sus aplicaciones}
+\author{Emanuel A. Benatti\\ Introducción a microsistemas y microfrabricación\\Instituto Balseiro - CNEA - UnCuyo}
+\maketitle
+%\begin{abstract}
+%
+%\end{abstract}
+%\newpage
+\section{Introducción}\label{S:intro}
+Los lab on a chip (laboratorios en un chip) son dispositivos cuyo objetivo es integrar las funciones de un laboratorio (que puede ser químico, biológico o médico) en un tamaño de algunos centímetros cuadradados. Para su fabricación se aprovecha la experiencia de la industria de la microelectrónica, y, a partir de estas herramientas se pueden construir redes de microcanales, con dimensiones que pueden ir de 100\,$\mu$m a 100\,nm, junto con la aplicación de bombas, válvulas, sensores, actuadores y electrónica relacionada\nocite{Abgrall2007}.\\
+
+Entre los materiales utilizados para la fabricación de los lab-on-chips (LOCs) se encuentra el silicio, que posee un amplio espectro técnicas para su maquinado, como se verá posteriormente. Sin embargo, la construcción de LOCs utilizando solamente silicio también tiene ciertas desventajas, como ser elevados costos, opacidad a la luz visible e incompatibilidad con los altos voltajes necesarios para operar algunos LOCs. Estas características hacen del silicio una opción no viable para ciertas aplicaciones de tipo biológica y química. Otro material importante en la fabricación de los LOCs es el vidrio, que tiene mejores propiedades eléctricas y ópticas que el silicio, además de que es biológicamente compatible, pero las estructuras de vidrio traen dificultades para integrar las diferentes herramientas necesarias en un LOC. La incorporación de plásticos y otros polímeros al proceso de microfabricación ha permitido el acceso materiales con una variedad de propiedades y técnicas de micromaquinado que han flexibilizado enormemente la generación de LOCs, sin mencionar el hecho de que poseen un costo sustancialmente menor que el vidrio  y el silicio. En esta monografía se hace un repaso de algunas de las técnicas y los materiales utilizados para fabricar LOCs, y se comentan algunas de las aplicaciones que resultan de la implementación de estas técnicas. Un mayor detalle de lo comentado en la sección \ref{S:mat} de este trabajo puede encontrarse en \cite{Abgrall2007}.\\
+ \begin{figure}[h!]
+   \begin{center}
+\input{x}
+   \end{center}
+   \caption{}
+   \label{fig:}
+ \end{figure}
+ 
+\section{Materiales y técnicas de micromaquinado}\label{S:mat}
+A continuación se presentan en forma resumida algunas técnicas de micromaquinado utilizadas frecuentemente en la fabricación de LOCs. El método de fabricación empleado depende fuertemente del material a emplear, así como de la aplicación que se le vaya a dar al LOC. En etapas posteriores de diseño, el costo y portabilidad del equipo asociado al LOC también se vuelven muy importantes. Las técnicas de micromaquinado pueden clasificarse a grandes rasgos como de volumen o de superficie, dependiendo del volumen de material que se requiera grabar. Los materiales plásticos poseen propiedades físicas y químicas muy distintas que el silicio o el vidrio, por lo tanto, los métodos de maquinado para los primeros que pueden ser muy distintos que los empleados en los segundos. Debido a esto se detallan por separado los métodos de fabricación de estructuras de plástico que los necesarios para lograr estructuras de vidrio o silicio. En los párrafos siguientes se describen primero las técnicas empleadas para obtener LOCs de silicio o vidrio, y posteriormente se comentan las empleadas en la construcción de dispositivos de plástico.
+
+
+\paragraph*{Micromaquinado de volumen}
+Las técnicas de micromaquinado de volumen se refieren a a\-que\-llas en las que el diseño de la estructura deseada se transfiere directamente a sustrato, las cuales pueden ser húmedas o secas, isotrópicas o anisotrópicas. En todos los casos es necesario elaborar previamente una máscara para seleccionar qué partes del material serán removidas y qué partes no. Las máscaras se hacen generalmente depositando resinas sensibles a la radiación UV en las muestras, que luego se hacen girar a algunos cientos o miles de rpm, de modo de lograr un cubrimiento uniforme del sustrato. Después de esto se cubre la resina con una máscara que tiene regiones clara y opacas, se la expone a luz UV y posteriormente se revela la resina. Dependiendo de que el material fotosensible sea positivo o negativo se removerá el material que fue expuesto o no, respectivamente.
+
+El paso siguiente es realizar un ataque químico que ``come'' el material pero no la resina. Materiales usados para maquinar el silicio son el ácido fluorídrico, nítrico, etanol (isotrópicos), hi\-dró\-xi\-do de potasio e hidróxido de tetrametilamonio (anisotrópicos), y para maquinar el vidrio se utiliza ácido fluorídrico (isotrópico). Los ataques isotrópicos son aquellos que disuelven el material con la misma velocidad en todas las direcciones del mismo, y el ataque anisotrópico consiste en utilizar un material que disuelva prefencialmente algunos planos cristalinos por sobre otros. El mayor problema con el ataque isotrópico es que resulta difícil controlar el perfil final de la estructura deseada, mientras que los ataques anisotrópicos combinados con técnicas que frenan el comido son lo suficientemente versátiles como para realizar estructuras en forma de membranas\cite{Gianchandani1992, Wallman2002}. Dentro de las limitaciones de las técnicas de grabado húmedo se ecuentra la dificultad en realizar estructuras muy compactas y el hecho de que se requieren químicos relativamente agresivos.
+
+El micromaquinado en seco consiste en exponer el sustrato a un gas ionizado realizando un ataque que puede ser tanto físico como químico. El grabado físico se logra acelerando iones (He, Ar, Ne) que remueven material al impactar con la superficie del sustrato, lo que constituye una técnica anisotrópica pero poco selectiva. Para lograr un grabado químico se utiliza un gas (por ejemplo SF$_6$ o CF$_4$) que al ser ionizado genere radicales libres que por acción química remuevan el material, logrando un ataque mucho más selectivo pero isotrópico. La combinación de estas dos técnicas, es decir, acelerar iones reactivos hacia el material a ser grabado, es una excelente forma de aprovechar las ventajas de ambos métodos de grabado en seco, y constituye lo que se denomina grabado por iones reactivos (RIE, por sus siglas en inglés). Una técnica derivada del RIE es el grabado profundo por iones reactivos (DRIE), que consite en realizar el proceso RIE y aplicar luego una capa pasivadora en el material a grabar, que posteriormente es removida anisotrópicamente en un nuevo proceso RIE. Este proceso se repite cíclicamente hasta generar la estructura deseada.
+
+Si las estructuras que se desean realizar son lo suficientemente grandes es posible utilizar polvos con granos extremadamente pequeños (del orden de la decena de micrones) para erodar el material que se desea grabar. En este caso se utilizan polvos de Al$_2$O$_3$ o SiC que son lanzados a alta presión hacia el sustrato a maquinar, que se encuentra cubierto por una máscara de algún material que sea mucho más duro que el sustrato. Esta técnica, denominada microarenado, tiene la ventaja de ser económica y poder conseguir excelentes contrastes, pero sólo se puede utilizar para grabar estructuras relativamente grandes, con dimensiones características del orden o mayores a la centena de micrón.
+
+\paragraph*{Micromaquinado de superficie}
+El micromaquinado superficial consiste en depositar capas delgadas de diferentes materiales que luego son removidos utilizando ataques químicos selectivos. A partir de un cuidadoso diseño de las capas estructurales y de sacrificio pueden lograrse una variedad de estructuras fijas y móviles que pueden ser manipuladas empleando fuentes de tensión. En este tipo de proceso es crucial el uso de capas de sacrificio combinadas con el material estructural. Para este tipo de proceso se suele utilizar óxido de silicio como material de sacrificio y silicio policristalino como material estructural. El uso de las plataformas multiusuario\cite{Koester1999} ha contribuido a hacer este proceso mucho más económico y accesible a laboratorios que no poseen facilidades apropiadas para realizar procesos de micromaquinado.
+
+\paragraph*{Ensamblado}
+Un paso de ensamblado, posterior al micromaquinado (ya sea superficial o de vo\-lu\-men) es necesario si se quieren fabricar estructuras cerradas. Este paso suele se el más crítico en el proceso de microfabricación, porque es el más costoso y porque puede introducir errores de alineación que perjudican gravemente la estructura final. Entre las técnicas utilizadas para ensamblar estructuras, las más importantes son la adhesión térmica, la adhesión con pegamentos y la anódica. La primera se puede utilizar para pegar silicio con silicio o vidrio con vidrio y consiste en presionar las dos estructuras a juntar, mientras se las calienta a temperaturas del orden de los 600\,ºC (vidrio) o 1000\,ºC (Si). Una alternativa que requiere menor temperatura de trabajo y que se puede usar para pegar casi cualquier par de sustratos es colocar algún adhesivo en la interfase entre ambos, mientras se los calienta a temperaturas del orden de los 100\,ºC. El pegado anódico se usa para pegar vidrio con Si sin la presencia de adhesivos, y requiere temperaturas relativamente bajas (300-400\,ºC). El procedimiento consiste en pegar los sustratos y aplicar entre los mismos una diferencia del orden de los 1000\,V, que logra que los materiales se polarizen y se atraigan electrostáticamente, lo que permite que queden pegados una vez finalizado el proceso.
+
+\paragraph*{Microfabricación utilizando plástico}
+Para la microfabricación de dispositivos de plástico se han adaptado las técnicas de fabricación y replicación propia de las industrias tradicionales del plástico, que obtienen el producto final a partir de la fabricación de un molde original. Como de este molde se procederá a hacer réplicas del producto deseado, el mismo debe cumplir requerimientos especiales para poder ser utilizado, a saber, debe tener muy baja rugosidad y resistir sin deformarse o deteriorarse varios ciclos de utilización, que comprenden solicitaciones mecánicas y fatiga térmica.
+
+La técnica utilizada para fabricar el molde depende de las facilidades disponibles, las geo\-me\-trí\-as deseadas y el tipo de plástico que se va a utilizar en el dispositivo. La creación de patrones utilizando litografía de rayos X permite lograr estructuras con baja rugosidad, pero requiere radiación de sincrotrón, lo que encarece notablemente su implementación. También se han fabricado moldes a partir de micromaquinar silicio con las técnicas descriptas anteriormente, pero como el silicio es bastante frágil, es necesario incorporar un soporte adicional (generalmente despositando metal sobre la estructura formada) para hacer un molde que resista el esfuerzo mecánico al que es sometido.
+
+Si la resolución necesaria no es demasiado grande, métodos tradicionales de maquinado, como el control numérico computarizado, pueden ser implementados con resoluciones de decenas de micrones. El maquinado con láser también es una técnica que funciona en varios tipos de materiales y que brinda una excelente resolución espacial.
+
+Una vez fabricado el molde se procede a la replicación, que emplea métodos que no son demasiado diferentes a los utilizado para elaborar plásticos a escala industrial. El método conocido como estampado caliente consiste en presionar una lámina de plástico caliente con los moldes, de modo de que el plástico llene las cavidades de los mismos. Luego se enfría el conjunto y se retiran los moldes, dejando la muestra lista. Otra técnica usada es la inyección líquida, en la que se inyecta plástico fundido a un molde cerrado y caliente, que es posteriormente enfriado. Finalmente se separan los moldes y se retira la muestra. Un tercer método que es el termoformado: en este caso el polímero se coloca en un molde, puesto en vacío y luego calentado. La inyección de gas presurizado dentro del molde permite adaptar el plástico al patrón del mismo.
+
+El estampado caliente es una técnica sencilla de implementar que es altamente reproducible, además requiere temperaturas algo menores que la inyección líquida, lo que reduce el estrés térmico residual del producto final. Sin embargo, tiene un ciclo más largo, así como un mayor desgaste de los moldes, lo que hace que no sea una técnica adecuada para grandes producciones. Para estas situaciones el método de inyección líquida es una opción mucho mejor.
+
+\section{Aplicaciones de los LOCs a la medicina}\label{S:aplic}
+A continuación se presentan dos aplicaciones particulares de LOCs para diferentes de estudios médicos. En primer lugar se muestra un dipositivo portátil para la detección y diagnóstico de cáncer de boca \cite{Wang2012} y en segundo lugar se comenta el diseño y la construcción de un LOC para realizar análisis de ADN \cite{Marasso2011}.
+
+\subsection{Detección de cáncer de boca utilizando un microespejo}\label{SS:cancer}
+En \cite{Wang2012} se describe la fabricación de una sonda para la detección de cáncer de boca que permite realizar un diagnóstico reduciendo los pasos necesarios para realizar el estudio pertinente, lo que resulta en una reducción de los costos y tiempos requeridos para hacer los análisis. Esto implica que la implementación de este tipo de LOC puede resultar en una detección más temprana de la enfermedad, lo que permitiría aumentar la tasa de supervivencia a la misma, que varía entre el 30\,\% y el 80\,\% dependiendo del país considerado.\\
+
+El dispositivo propuesto consiste en un espejo de 1024\,$\mu$m de diámetro colocado sobre un microchip de 2.8\,mm\,$\times$\,2.8\,mm. El espejo se acciona aplicando alta tensión a dos estructuras tipo comb-drive perpendiculares entre sí, que se encuentran acopladas a respectivas estructuras tipo cardán que permiten la rotación del espejo en dos ejes independientes. Toda esta estructura se dispone sobre una plaqueta en la que se imprimió un circuito, de modo de simplificar el cableado, suministro de tensión y empaquetado del sistema final.\\
+
+El diagnóstico se realiza incidiendo con un láser sobre el microespejo, y aplicando luego una tensión alterna a cada uno de los ejes de rotación del espejo, de modo que el mismo se mueva formando una figura de Lissajous en la región que se desee estudiar. La luz reflejada por el tejido es capturada por el mismo microespejo y dirigida hacia el equipo de adquisición y procesamiento de datos. La separación de la luz incidente y reflejada se logra con un arreglo óptico diseñado para tal fin.\\
+
+El microespejo y las estructuras comb-drive fueron fabricados a partir de un sustrato de silicio sobre el que se depositó una máscara de óxido de silicio por evaporación química. El patrón para realizar el micromaquinado se realizó utilizando fotolitografía, y RIE, para remover el óxido de silicio. El maquinado del sustrato se logró a partir de realizar un proceso DRIE. Las frecuencias de resonancia de los espejos así fabricados eran de 2.57\,kHz y 1.2\,kHz para cada eje.\\
+
+En \cite{Wang2012} se muestran las imágenes de diferentes tejidos infectados, y se comparan las obtenidas utilizando el microespejo y las que se obtienen empleando los microscopios comerciales que se usan para realizar el diagnóstico de cáncer de boca. En estas imágenes se demuestra que no existe pérdida de resolución o rango visual y que se pueden observar claramente las regiones infectadas por el cáncer.
+
+\subsection{LOCs para realizar análisis de ADN}\label{SS:dna}
+En \cite{Marasso2011} se presenta un micro sistema de análisis total ($\mu$-TAS) multiplataforma, junto con el correspondiente protocolo de tratamiento de ADN. El LOC presentado integra componentes de silicio, vidrio y plástico en diferentes niveles, constituyendo una red de microcanales que permiten realizar el tratamiento, análisis y deposición de muestras de ADN. El análisis de muestras en un sistema con dimensiones características del orden del micrón permite reducir notablemente la cantidad de material biológico necesario para el estudio, así como de reactivos y de residuos biológicos finales.\\
+
+El $\mu$-TAS se compone de un arreglo de microcanales que cuenta con mezcladores pasivos y múltiples entradas, y se fabricó utilizando vidrio y silicio. En un nivel superior se encuentra una cámara de reacción y con sus respectivas entradas y salidas. Todo el sistema se encuentra sujeto con abrazaderas y conectado a un equipo externo que consiste en un conjunto de bombas, un controlador de temperatura y un sistema de adquisición de datos.\\
+
+Como el LOC construido tiene varios niveles, cada uno de los cuales fue realizado empleando diferentes materiales, su construcción requirió el uso de varias técnicas de micromaquinado, así como extremo cuidado en la alineación y ensamblaje de las diferentes partes. El arreglo de microcanales fue construido realizando un microarenado sobre un sustrato de silicio, lográndose canales de 100\,$\mu$m de profundidad y 500\,$\mu$m de ancho. La fabricación de las máscaras se realizó utilizando fotolitografía estándar. Una vez hechos los microcanales, los mismos se recubrieron con dióxido de silicio y se cerraron utilizando un sustrato de vidrio de borosilicato que fue pegado utilizando afdhesión anódica. En el vidrio se micromaquinaron los accesos y las salidas de los microcanales, para lo cual se empleó la misma técnica de grabado que para el silicio. La conexión entre los canales y la cámara de reacción, así como la cámara misma fueron construidos utilizando termoplásticos (PDMS), empleando un proceso de inyección líquida para su fabricación. La cámara de reacción fue cerrada utilizando un portamuestra de vidrio.\\
+
+El diseño del LOC fue optimizado realizando simulaciones de elementos finitos para estudiar el mezclado entre los reactivos y los elementos biológicos. La plataforma construida permitió la aplicación de un protocolo completamente automatizado para realizar análisis de ADN, demostrando que el sistema fabricado permite manejar en forma precisa y segura fluidos biológicos en cada uno de sus niveles.
+
+\section{Conclusiones}
+Los Lab-on-Chips (LOCs) son sistemas que permiten implementar diferentes herramientas de diagnósticos y análisis en equipos altamente portátiles y económicos, dando prestaciones comparables o superiores a las obtenidas por métodos tradicionales. Además, como requieren cantidades pequeñas de material biológico para trabajar, son una alternativa mucho más segura, limpia y rá\-pi\-da, que pueden permitir realizar diagnósticos precisos, facilitando los procesos de extracción y de manejo de muestras.
+
+Las técnicas de micromaquinado provenientes de la industria de la microelectrónica se han adaptado con éxito a los usos y necesidades de los campos de la medicina y la biología, y se ha logrado incorporar nuevos materiales (diferentes tipos de plásticos y vidrios) y técnicas de mi\-cro\-fa\-bri\-ca\-ción que han versatilizado las aplicaciones de los LOCs y reducido los costos de producción.
+
+Los mayores problemas asociados a la fabricación de LOCs pueden encontrarse en los pasos de ensamblado y alineación donde los procesos necesarios son con frecuencia costosos y muy sensibles a errores que llevan a degradación en el rendimiento. Problemas en el ensamblado también pueden llevar a que los sistemas finales tengan pérdidas de material biológico, lo que lleva a la creación de desperdicios innecesarios y contaminación de las muestras. Los pasos de ensamblaje resultan particularmente críticos cuando se desea articular las diferentes partes de los LOCs empleando diferentes materiales, cosa que con frecuencia es indispensable para tener un buen rendimiento a un bajo costo.
+
+No obstante estos problemas, las numerosas ventajas de los LOCs han obligado a la búsqueda de soluciones a estos inconvenientes, y esto rendundó en una numerosa cantidad de técnicas de micromaquinado y ensamblado, que combinadas con herramientas de diseño, como los programas de simulación por el método de elementos finitos, han permitido fabricar dispositivos eficientes, precisos, rápidos y de costos razonables, sobre todo cuando se los compara con los métodos tradicionales que existen para realizar las mismas tareas.
+
+\bibliography{./biblio,./dna,./cancer}
+
+\end{document}

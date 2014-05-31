@@ -1,0 +1,84 @@
+###
+### Gnuplot version 4.7 intialization file
+### This file is loaded by gnuplot at the start of each run.
+### It is provided as a template, with all commands commented out.
+### Uncomment and customize lines for local use.
+### Any commands placed here will affect all users.
+### To customize gnuplot's initial state for an individual user,
+### place commands in a private file ~/.gnuplot instead.
+
+###
+### Language initialization
+###
+set locale
+#set encoding locale
+set encoding iso_8859_1 #acentos y letras griegas
+#á=\341 é=\351 í=\355 ó=\363 ú=\372
+##{/Symbol a}=alpha
+
+###
+### Default line colors and repeat cycle
+###
+set linestyle 1 lt 2 lc rgb "dark-violet" lw 2 pt 7 ps 1
+set linestyle 2 lt 2 lc rgb "black" lw 2 pt 6 ps 1
+set linestyle 3 lt 4 lc rgb "red" lw 2 pt 5 ps 1
+set linestyle 4 lt 4 lc rgb "blue" lw 2 pt 4 ps 1
+set linestyle 5 lt 6 lc rgb "#006600" lw 2
+set linestyle 6 lt 6 lc rgb "#000099" lw 2
+set linestyle 7 lt 8 lc rgb "#0072b2" lw 2
+set linestyle 8 lt 8 lc rgb "dark-violet" lw 2
+set linestyle 9 lt 1 lc rgb "black" lw 2
+set linestyle 10 lt 3 lc rgb "red" lw 2
+set linestyle 11 lt 5 lc rgb "blue" lw 2
+set linestyle 12 lt 7 lc rgb "#006600" lw 2
+set linestyle 13 lt 9 lc rgb "#000099" lw 2
+
+set linetype 1 lt 1 lc rgb "dark-violet" lw 2
+set linetype 2 lt 1 lc rgb "black" lw 2
+set linetype 3 lt 1 lc rgb "red" lw 2
+set linetype 4 lt 1 lc rgb "blue" lw 2
+set linetype 5 lt 1 lc rgb "#006600" lw 2
+set linetype 6 lt 2 lc rgb "#7F7B00" lw 2
+set linetype 7 lt 2 lc rgb "#740030" lw 2
+set linetype 8 lt 4 lc rgb "dark-violet" lw 2
+set linetype 9 lt 4 lc rgb "black" lw 2
+set linetype 10 lt 0 lc rgb "red" lw 2
+set linetype 11 lt 0 lc rgb "blue" lw 2
+set linetype 12 lt 5 lc rgb "#006600" lw 2
+set linetype 13 lt 5 lc rgb "#000099" lw 2
+set linetype cycle 13
+
+###
+### Initialize the default loadpath for shared gnuplot scripts and data.
+### Please confirm that this path is correct before uncommented the line below.
+###
+set loadpath "/usr/local/share/gnuplot/4.7/"
+
+###
+### Some commonly used functions that are not built in
+###
+sinc(x) = sin(x)/x
+
+###
+### Other preferences
+###
+# set clip two
+
+#Líneas de interés personal
+#caracteres comentario
+#set datafile commentschars "#%!"
+#habilito las líneas de puntos
+set termoption dash
+#habilito las variables con los errores de los fiteos (se escribe "VARIABLE"_err)
+set fit errorvariables
+#utilizar los encabezados para las leyendas de las graficas 
+set key autotitle columnhead
+#imprimo algunas informaciones útiles
+print 'loadpath=/usr/local/share/gnuplot/4.7/gnuplotrc'
+print 'set fit errorvariables'
+print 'set encoding iso_8859_1'
+print 'á=\341 é=\351 í=\355 ó=\363 ú=\372'
+print 'º=\260 +-=\261'
+print '{/Symbol a}=alpha'
+print 'Comments chars: #, %, !'
+print 'Para utilizar las columnas como encabezados hay que encerrar el titulo de cada columna entre comillas (y sin el caracter de comentario)'

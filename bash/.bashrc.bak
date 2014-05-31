@@ -1,0 +1,156 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
+# for examples
+
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# don't put duplicate lines in the history. See bash(1) for more options
+# ... or force ignoredups and ignorespace
+HISTCONTROL=ignoredups:ignorespace
+
+# append to the history file, don't overwrite it
+shopt -s histappend
+
+# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+HISTSIZE=1000
+HISTFILESIZE=2000
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+
+# set variable identifying the chroot you work in (used in the prompt below)
+if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
+    debian_chroot=$(cat /etc/debian_chroot)
+fi
+
+# set a fancy prompt (non-color, unless we know we "want" color)
+case "$TERM" in
+    xterm-color) color_prompt=yes;;
+esac
+
+# uncomment for a colored prompt, if the terminal has the capability; turned
+# off by default to not distract the user: the focus in a terminal window
+# should be on the output of commands, not on the prompt
+#force_color_prompt=yes
+
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+	# We have color support; assume it's compliant with Ecma-48
+	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+	# a case would tend to support setf rather than setaf.)
+	color_prompt=yes
+    else
+	color_prompt=
+    fi
+fi
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+# If this is an xterm set the title to user@host:dir
+case "$TERM" in
+xterm*|rxvt*)
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+    ;;
+*)
+    ;;
+esac
+
+# enable color support of ls and also add handy aliases
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# some more ls aliases
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
+alias ssh='ssh -C2X'
+#alias para acceder a pc's dentro del CAB
+
+#pc's de particulas
+#alias p3='ssh benatti@10.73.22.103'
+#alias p4='ssh benatti@10.73.22.104'
+#alias p5='ssh benatti@10.73.22.105'
+#alias p6='ssh benatti@10.73.22.106'
+#alias p3x='ssh -X benatti@10.73.22.103'
+#alias p4x='ssh -X benatti@10.73.22.104'
+#alias p5x='ssh -X benatti@10.73.22.105'
+#alias p6x='ssh -X benatti@10.73.22.106'
+
+#pc's de bt
+#alias btp='ssh benatti@10.73.20.60'
+#alias btpx='ssh -X benatti@10.73.20.60'
+
+#tuneles para acceder a pc's fuera del CAB
+#alias tunel_p3='ssh -p8128 -Nf -i /home/benatti/Documentos/Libros/ssh/.ssh/id_dsa -L1033:10.73.22.103:22 benatti@200.0.233.54'
+#alias tp3='ssh -p1033 benatti@localhost'
+
+#alias tunel_p4='ssh -p8128 -Nf -i /home/benatti/Documentos/Libros/ssh/.ssh/id_dsa -L1034:10.73.22.104:22 benatti@200.0.233.54'
+#alias tp4='ssh -p1034 benatti@localhost'
+
+#alias tunel_p5='ssh -p8128 -Nf -i /home/benatti/Documentos/Libros/ssh/.ssh/id_dsa -L1035:10.73.22.105:22 benatti@200.0.233.54'
+#alias tp5='ssh -p1035 benatti@localhost'
+
+#alias tunel_p6='ssh -p8128 -Nf -i /home/benatti/Documentos/Libros/ssh/.ssh/id_dsa -L1036:10.73.22.106:22 benatti@200.0.233.54'
+#alias tp6='ssh -p1036 benatti@localhost'
+
+#alias tunel_btp='ssh -p8128 -Nf -i /home/benatti/Documentos/Libros/ssh/.ssh/id_dsa -L1028:10.73.20.60:22 benatti@200.0.233.54'
+#alias tbtp='ssh -p1028 -X benatti@localhost'
+
+#alias sincronizar='rsync -avz /home/benatti/Documentos benatti@batemp:/home/benatti/Documents/bckp/'
+
+alias comsol='/home/benatti/Programas/COMSOL/COMSOL42a/bin/comsol -3Drend sw'
+
+alias jdownloader='/home/benatti/Descargas/jdownloader/JDLauncher &'
+
+alias jupdate='java -jar /home/benatti/Descargas/jdownloader/jdupdate.jar -branch NIGHTLY'
+#Permisos por defecto de los ficheros
+#0: nada, 1(001): x, 2(010): w, 4(100): r. Pensar que rwx es un número binario
+#umask por defecto 022 (ver /etc/login.defs)
+#permisos base archivos: 666
+#permisos base directorios: 777
+#umask 002
+
+alias marvel='cd /home/benatti/Público/Juegos/Marvel.vs.Capcom.3'
+alias capcom='wine MVC3.exe &'
+
+alias fullprof='tfp &'
+FULLPROF=/home/benatti/Programas/Cristalografia/FullProf
+PATH=$FULLPROF:$PATH
+export fullprof
+
+export PATH=/home/benatti/Documentos/Scripts/bash:$PATH

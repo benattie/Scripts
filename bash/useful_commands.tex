@@ -1,0 +1,76 @@
+%awk
+%Extrer las columnas 1 y 2 de Al-AR-M-H-tex_00001.spr_trs.csv (archivo de valores separados por coma) y redirigir la salida desde pantalla al archivo dif000.dat (los datos en dif000.dat aparecen separados por un espacio)
+awk -F, '{print $1 " " $2}' Al-AR-M-H-tex_00001.spr_trs.csv > dif000.dat
+------------------------------------------------------------------------------------
+%coreutils en general
+%crea un directorio y todos los directorios superiores indicados en el path
+mkdir -p /ruta/al/directorio
+%cut
+%Extraer columnas 1, 2 y 4 de Al-AR-M-H-tex_00001.spr_trs.csv (archivo de valores separados por coma) y redirigir la salida desde pantalla al archivo pp.dat. Los valores aparecen igual que en el archivo original
+cut -d',' -f1,2,4 Al-AR-M-H-tex_00001.spr_trs.csv > pp.dat
+%Extraer columnas 1 a la 4 de Al-AR-M-H-tex_00001.spr_trs.csv (archivo de valores separados por coma) y redirigir la salida desde pantalla al archivo pp.dat. Los valores aparecen igual que en el archivo original
+cut -d',' -f1-4 Al-AR-M-H-tex_00001.spr_trs.csv > pp.dat
+------------------------------------------------------------------------------------
+%Git
+%ver como esta todo
+git status
+%ver historia de los commits
+git log
+%agregar archivo creado/modificado
+git add file
+%agregar todo lo cambiado
+git add .
+%renombrar archivo
+git mv old_file new_file
+%borrar archivo
+git rm file
+%borrar directorio
+git rm -r folder
+%crear un commit con los archivos modificados
+git commit -m "<comentario>"
+%agregar archivos modificados y crear el commit al mismo tiempo
+git commit -a
+%subir cambios a repositorio remoto
+git push <url> branch
+%obtener cambios desde repositorio remoto
+git pull <url> branch
+%agregar repositorio remoto
+git remote add repo_name <url>
+%checkear por cambios sin modificar el repositorio local
+git fetch repo_name
+git diff master repo_name/master
+%combinar los repositorios una vez checkeadas las diferencias
+git merge origin/master
+%clonar repositorio remoto
+git clone username@host:/path/to/repository
+%deshacer cambios en el archivo file (que no fue agregado con git add)
+git checkout -- file
+%deshacer todo a la ultima version que figura en el repositorio remoto
+git fetch origin o git fetch <url> branch
+git reset --hard origin/master
+%crear y cambiar a brach feature_x
+git checkout -b feature_x
+%cambiar a branch x
+git checkout x
+%renombrar branch
+git branch -m old_branch new_branch
+%borrar branch feature_x
+git branch -d feature_x
+%combinar branch feature_x a rama activa
+git merge feature_x
+%gui
+git gui
+------------------------------------------------------------------------------------
+%vim
+%reemplazar todas las ocurrencias de foo por bar
+:%s/foo/bar/g
+%reemplazar todas las ocurrencias de foo por bar pidiendo confirmacion
+:%s/foo/bar/gc
+%borrar hasta el fin de linea
+D
+%borrar hasta la proxima palabra
+dw
+------------------------------------------------------------------------------------
+%gnuplot
+%graficar datos ingresados a mano
+plot '-'
