@@ -1,6 +1,8 @@
-#para actualizar el backup ejecutar
-#rsync -avz --progress --exclude-from 'rsync_exclude_list.txt' /home/benatti/ /media/benattiHD_bkp/home_bkp/
+.cache
 Downloads
 Dropbox
 Programs
 Videos
+Public
+VirtualBox VMs
+Documents/Mendeley Desktop

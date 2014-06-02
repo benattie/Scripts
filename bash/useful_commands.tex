@@ -3,6 +3,9 @@
 awk -F, '{print $1 " " $2}' Al-AR-M-H-tex_00001.spr_trs.csv > dif000.dat
 ------------------------------------------------------------------------------------
 %coreutils en general
+%sed
+%extraer el primer caracter de la primer linea de tmp y mandarlo a tmp2
+sed '1s/^.//' tmp > tmp2
 %crea un directorio y todos los directorios superiores indicados en el path
 mkdir -p /ruta/al/directorio
 %cut
