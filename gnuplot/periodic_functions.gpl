@@ -1,0 +1,20 @@
+#funcion periodica centrada en 0
+f(x) = x
+T = 2*pi
+g(x) = f(x-T*floor(x/T+0.5))
+#para que la funcion arranque en 0 se debe reemplazar 0.5 por 0
+#coeficiente de fourier de una onda cuadrada
+#fourier(k, x) = sin(3./2*k)/k * 2./3*cos(k*x)
+#sum10(x)   = 1./2 + sum [k=1:10]   fourier(k, x)
+#sum100(x)  = 1./2 + sum [k=1:100]  fourier(k, x)
+#sum1000(x) = 1./2 + sum [k=1:1000] fourier(k, x)
+
+#coeficiente de fourier de una onda diente de sierra
+fourier(k, x) = -2*sin(k*x)/k * (-1)**k
+sum10(x)   = sum [k=1:10]   fourier(k, x)
+sum100(x)  = sum [k=1:100]  fourier(k, x)
+sum1000(x) = sum [k=1:1000] fourier(k, x)
+
+
+
+plot g(x), sum10(x), sum100(x), sum1000(x)
