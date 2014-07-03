@@ -1,0 +1,8 @@
+do for [t=0:3330]
+{
+    plot './fit_results.dat' index t w p pt 7 ps 2
+    fit f(x) './fit_results.dat' index t via m,h
+    replot f(x)
+    pause 3
+}
+

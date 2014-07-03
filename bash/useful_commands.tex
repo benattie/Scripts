@@ -6,6 +6,10 @@ awk -F, '{print $1 " " $2}' Al-AR-M-H-tex_00001.spr_trs.csv > dif000.dat
 %sed
 %extraer el primer caracter de la primer linea de tmp y mandarlo a tmp2
 sed '1s/^.//' tmp > tmp2
+%elimina los primeros 2 caracteres
+sed 's ..  ' fit2peak-index.m
+%elimina los primeros 3 caracteres
+sed 's ...  ' fit2peak-index.m
 %crea un directorio y todos los directorios superiores indicados en el path
 mkdir -p /ruta/al/directorio
 %cut
@@ -13,6 +17,8 @@ mkdir -p /ruta/al/directorio
 cut -d',' -f1,2,4 Al-AR-M-H-tex_00001.spr_trs.csv > pp.dat
 %Extraer columnas 1 a la 4 de Al-AR-M-H-tex_00001.spr_trs.csv (archivo de valores separados por coma) y redirigir la salida desde pantalla al archivo pp.dat. Los valores aparecen igual que en el archivo original
 cut -d',' -f1-4 Al-AR-M-H-tex_00001.spr_trs.csv > pp.dat
+%elimina los primeros n - 1 caracteres
+cut -c n- fit2peak-index.m > fit2peak-index.m
 ------------------------------------------------------------------------------------
 %Git
 %ver como esta todo
@@ -61,6 +67,8 @@ git branch -m old_branch new_branch
 git branch -d feature_x
 %combinar branch feature_x a rama activa
 git merge feature_x
+%ver todas las ramas creadas
+git branch
 %gui
 git gui
 ------------------------------------------------------------------------------------
@@ -77,3 +85,18 @@ dw
 %gnuplot
 %graficar datos ingresados a mano
 plot '-'
+------------------------------------------------------------------------------------
+%diff
+%salida en columnas mostrando solo en la izquierda las filas en comun
+diff -y --left-column a001_PF_1_m.dat a001_PF_1_m.dat.orig
+%idem anterior omitiendo diferencias por tabs
+diff -yE --left-column a001_PF_1_m.dat a001_PF_1_m.dat.orig
+%idem anterior omitiendo diferencias por espacios
+diff -yb --left-column a001_PF_1_m.dat a001_PF_1_m.dat.orig
+------------------------------------------------------------------------------------
+%creacion de iso
+%crear imagen iso de un CD/DVD
+dd if=/dev/hdc of=archivo.iso
+%crear iso a partir de un directorio
+mkisofs -o /tmp/cd.iso /tmp/directory/
+------------------------------------------------------------------------------------
