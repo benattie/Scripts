@@ -7,9 +7,9 @@ awk -F, '{print $1 " " $2}' Al-AR-M-H-tex_00001.spr_trs.csv > dif000.dat
 %extraer el primer caracter de la primer linea de tmp y mandarlo a tmp2
 sed '1s/^.//' tmp > tmp2
 %elimina los primeros 2 caracteres
-sed 's ..  ' fit2peak-index.m
+sed -i 's/^..//' print_pole_figure.py
 %elimina los primeros 3 caracteres
-sed 's ...  ' fit2peak-index.m
+sed -i 's/^...//' print_pole_figure.py
 %crea un directorio y todos los directorios superiores indicados en el path
 mkdir -p /ruta/al/directorio
 %cut
