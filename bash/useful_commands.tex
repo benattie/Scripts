@@ -1,9 +1,12 @@
-%awk
+% awk
 %Extrer las columnas 1 y 2 de Al-AR-M-H-tex_00001.spr_trs.csv (archivo de valores separados por coma) y redirigir la salida desde pantalla al archivo dif000.dat (los datos en dif000.dat aparecen separados por un espacio)
 awk -F, '{print $1 " " $2}' Al-AR-M-H-tex_00001.spr_trs.csv > dif000.dat
+% Eliminar la tercer columna
+awk '!($7=" ")' input > output
+$
 ------------------------------------------------------------------------------------
-%coreutils en general
-%sed
+% coreutils en general
+% sed
 %extraer el primer caracter de la primer linea de tmp y mandarlo a tmp2
 sed '1s/^.//' tmp > tmp2
 %elimina los primeros 2 caracteres
@@ -12,7 +15,8 @@ sed -i 's/^..//' print_pole_figure.py
 sed -i 's/^...//' print_pole_figure.py
 %crea un directorio y todos los directorios superiores indicados en el path
 mkdir -p /ruta/al/directorio
-%cut
+------------------------------------------------------------------------------------
+% cut
 %Extraer columnas 1, 2 y 4 de Al-AR-M-H-tex_00001.spr_trs.csv (archivo de valores separados por coma) y redirigir la salida desde pantalla al archivo pp.dat. Los valores aparecen igual que en el archivo original
 cut -d',' -f1,2,4 Al-AR-M-H-tex_00001.spr_trs.csv > pp.dat
 %Extraer columnas 1 a la 4 de Al-AR-M-H-tex_00001.spr_trs.csv (archivo de valores separados por coma) y redirigir la salida desde pantalla al archivo pp.dat. Los valores aparecen igual que en el archivo original
@@ -20,7 +24,7 @@ cut -d',' -f1-4 Al-AR-M-H-tex_00001.spr_trs.csv > pp.dat
 %elimina los primeros n - 1 caracteres
 cut -c n- fit2peak-index.m > fit2peak-index.m
 ------------------------------------------------------------------------------------
-%Git
+% Git
 %ver como esta todo
 git status
 %ver historia de los commits
@@ -72,7 +76,7 @@ git branch
 %gui
 git gui
 ------------------------------------------------------------------------------------
-%vim
+% vim
 %reemplazar todas las ocurrencias de foo por bar
 :%s/foo/bar/g
 %reemplazar todas las ocurrencias de foo por bar pidiendo confirmacion
@@ -82,11 +86,11 @@ D
 %borrar hasta la proxima palabra
 dw
 ------------------------------------------------------------------------------------
-%gnuplot
+% gnuplot
 %graficar datos ingresados a mano
 plot '-'
 ------------------------------------------------------------------------------------
-%diff
+% diff
 %salida en columnas mostrando solo en la izquierda las filas en comun
 diff -y --left-column a001_PF_1_m.dat a001_PF_1_m.dat.orig
 %idem anterior omitiendo diferencias por tabs
@@ -94,9 +98,28 @@ diff -yE --left-column a001_PF_1_m.dat a001_PF_1_m.dat.orig
 %idem anterior omitiendo diferencias por espacios
 diff -yb --left-column a001_PF_1_m.dat a001_PF_1_m.dat.orig
 ------------------------------------------------------------------------------------
-%creacion de iso
-%crear imagen iso de un CD/DVD
+% creacion de iso
+% crear imagen iso de un CD/DVD
 dd if=/dev/hdc of=archivo.iso
 %crear iso a partir de un directorio
 mkisofs -o /tmp/cd.iso /tmp/directory/
 ------------------------------------------------------------------------------------
+% rename
+rename 's/search/replace/g'
+------------------------------------------------------------------------------------
+% convert
+convert a.pdf a.png
+% jugando con la calidad
+convert -quality 00 a.pdf a.png
+convert -quality 05 a.pdf a.png
+------------------------------------------------------------------------------------
+% Cosas varias
+% ruta a una carpeta compartida por samba
+/run/user/$(id -u)/gvfs
+$
+% Comprimir una carpeta usando 7zip
+7z a -t7z -mx=9 file7z.7z dir
+% Comprimir una carpeta usando 7zip con contraseña abre
+7z a -t7z -mx=9 -pabre file7z.7z dir
+% Copiar un directorio al cluster
+rsync -avz /origin/path/ ebenatti.ifir@piluso.rosario-conicet.gov.ar:/destination/path/
