@@ -1,0 +1,34 @@
+No estan
+browser.dom.global_scope_pollution;disabled
+browser.history_expire_sites;100
+browser.microsummary.enabled;false
+browser.related.enabled;false
+browser.tabs.showSingleWindowModePrefs;true
+content.max.tokenizing.time;360000
+content.interrupt.parsing;false
+content.notify.backoffcount;1
+content.notify.interval;50000
+content.switch.threshold;50000
+network.dnsCacheEntries;200
+network.ftp.idleConnectionTime;90
+network.http.pipelining.firstrequest;false
+nglayout.initialpaint.delay;false
+toolkit.storage.synchronous;0
+webgl.msaa-level;0
+
+
+
+Decidi no implementar
+browser.download.manager.scanWhenDone;false
+browser.download.useDownloadDir;false
+browser.download.useToolkitUI;true
+browser.newtab.url;about:blank
+browser.search.update;false
+browser.sessionstore.restore_on_demand;false
+browser.startup.homepage;about:blank
+image.http.accept;image/png,image/*;q=0.1,*/*;q=0.1
+network.http.accept.default;text/html,application/xhtml+xml,application/xml;q=0.1,*/*;q=0.1
+nglayout.enable_drag_images;false
+toolkit.scrollbox.smoothScroll;false
+
+

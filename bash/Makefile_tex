@@ -1,0 +1,27 @@
+# Makefile for building a pdf document from a tex file. Hago pdflatex, bibtex, pdflatex(x3) para tener la bibliografia bien. Por último abro el evince para ver el #archivo
+
+DPDFLXFLGS = -draftmode -file-line-error
+PDFLXFLGS = -file-line-error
+PDFLX = pdflatex
+BIBTX = bibtex
+MKIDX= makeindex
+MKIDXFLGS = -s nomencl.ist -o
+EVIN = evince
+FILE = tesis
+
+#target: depends
+%: %.tex
+
+	$(PDFLX) $(PDFLXFLGS) $<
+	$(BIBTX) $@.aux
+	$(MKIDX) $@.nlo $(MKIDXFLGS) $@.nls
+	$(PDFLX) $(PDFLXFLGS) $<
+	$(PDFLX) $(PDFLXFLGS) $<
+	$(EVIN) $@.pdf &
+
+tesis.tex:
+
+	$(PDFLX) $(PDFLXFLGS) $@
+
+clean:
+	rm -f *.aux *.bbl *.blg *.brf *.ilg *.lof *.log *.lot *.nlo *.nls *.out *.toc 

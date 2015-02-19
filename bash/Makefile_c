@@ -1,0 +1,17 @@
+# Makefile for building C stuff with GSL
+
+CFLAGS = -Wall -O3 -I/usr/include
+LIBS = -L/usr/lib -lgsl -lgslcblas -lm
+CC = gcc
+#objetivo/s: dependencia/s
+%: %.c
+#corre las siguientes líneas en el shell (terminal)
+#	$(CC) $(CFLAGS) $(LDFLAGS) $< -o $@
+	$(CC) $(CFLAGS) -c $@.c
+	$(CC) $(LIBS) $@.o -o $@.exe
+
+# eg. do "make gsl_test" to make gsl_test from gsl_test.c
+# then run with "gsl_test 10"
+
+clean:
+	rm -f *~ *.o core *.exe

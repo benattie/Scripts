@@ -1,0 +1,30 @@
+Rules of Automation
+ (A) Automate everything that can be automated.
+ (B) Write a single script that executes all code from beginning to end.
+
+Rules of  Version Control
+ (A) Store code and data under version control.
+ (B) Run the whole directory before checking it back in.
+
+Rules of Directories
+ (A) Separate directories by function.
+ (B) Separate files into inputs and outputs.
+ (C) Make directories portable.
+
+Rules of Keys
+ (A) Store cleaned data in tables with unique, non-missing keys.
+ (B) Keep data normalized as far into your code pipeline as you can.
+
+Rules of Abstraction
+ (A) Abstract to eliminate redundancy.
+ (B) Abstract to improve clarity.
+ (C) Otherwise, don't abstract.
+
+Rules of  Documentation
+ (A) Don't write documentation you will not maintain.
+ (B) Code should be self-documenting. 
+ 
+
+Rules of Management
+ (A) Manage tasks with a task management system.
+ (B) E-mail is not a task management system.

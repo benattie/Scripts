@@ -1,0 +1,27 @@
+stats data u 7 
+fit Vka*x+b  data u 4:3 via Vka,b
+plot data u 4:3, Vka*x+b
+temp=STATS_mean
+
+data2= sprintf("< awk ' BEGIN {Z=0;X=0;W=0}{if (NR>5) {a=$2; V[Z,X]=$0;V1[Z]=X;X=X+1; getline; V[Z,X]=$0;V1[Z]=X;X=X+1;  if ($2!=a) {Z=Z+1;X=0 }}  } END {for (i=3*int(V1[0]/4);i< V1[0];i++){ print V[0,i]}; for (i=3*int(V1[Z-1]/4);i< V1[Z-1];i++){ print V[Z-1,i]} for (i=3*int(V1[Z]/4);i< V1[Z-1];i++){ print V[Z,i]}}' %s", data)
+
+plot data u 1:2, data2 u 1:2
+DT_ka(temp,V)=V/(Sa(temp)-Sk(temp))
+
+V=Vaf-Vai-Vkf+Vki
+DT_0= DT_ka(temp,V)
+DT_1=DT_ka(temp+DT_0/2.,V)
+
+while (abs(1.-DT_0/DT_1)> 1e-10){
+  DT_0=DT_1
+  DT_1=DT_ka(temp+DT_0/2.,V)
+  }
+
+print Sx(temp,Vka),temp,Vka, 3.62/Sx(temp,Vka), data
+
+
+
+#set print save_dat append
+#print Sx(temp,Vka),temp,Vka,b,' ',data
+#unset print
+#plot save_dat u 2:1
